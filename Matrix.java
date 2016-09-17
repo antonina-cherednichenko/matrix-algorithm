@@ -49,12 +49,11 @@ public class Matrix implements Serializable {
 
         while (startX >= 0 || endY < columnLen || endX < rowLen || startY >= 0) {
             count++;
+            
             startX = startX - 1;
             endX = endX + 1;
-
             startY = startY - 1;
             endY = endY + 1;
-
 
             for (int i = 0; i < count * 2 + 1; i++) {
 
@@ -78,14 +77,6 @@ public class Matrix implements Serializable {
                     }
                 }
             }
-        }
-
-
-        for (int i = 0; i < rowLen; i++) {
-            for (int j = 0; j < columnLen; j++) {
-                System.out.print(" " + elements[i][j]);
-            }
-            System.out.println();
         }
     }
 
