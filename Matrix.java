@@ -37,7 +37,7 @@ public class Matrix implements Serializable {
 
     //algorithm of generation
     private void generate() {
-        
+
         int count = 0;
 
         int startX = posX;
@@ -56,27 +56,25 @@ public class Matrix implements Serializable {
             endY = endY + 1;
 
 
-            for (int i = startX; i <= endX; i++) {
+            for (int i = 0; i < count * 2 + 1; i++) {
 
-                if (i >= 0 && i < rowLen) {
+                if (startX + i >= 0 && startX + i < rowLen) {
                     if (startY >= 0) {
-                        elements[i][startY] = count;
+                        elements[startX + i][startY] = count;
                     }
                     if (endY < columnLen) {
-                        elements[i][endY] = count;
+                        elements[startX + i][endY] = count;
                     }
                 }
-            }
 
-            for (int j = startY; j <= endY; j++) {
-                if (j >= 0 && j < columnLen) {
+                if (startY + i >= 0 && startY + i < columnLen) {
 
                     if (startX >= 0) {
-                        elements[startX][j] = count;
+                        elements[startX][startY + i] = count;
                     }
 
                     if (endX < rowLen) {
-                        elements[endX][j] = count;
+                        elements[endX][startY + i] = count;
                     }
                 }
             }
