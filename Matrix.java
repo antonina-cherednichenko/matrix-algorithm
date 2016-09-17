@@ -37,7 +37,6 @@ public class Matrix implements Serializable {
 
     //algorithm of generation
     private void generate() {
-
         int count = 0;
 
         int startX = posX;
@@ -46,10 +45,9 @@ public class Matrix implements Serializable {
         int startY = posY;
         int endY = posY;
 
-
         while (startX >= 0 || endY < columnLen || endX < rowLen || startY >= 0) {
             count++;
-            
+
             startX = startX - 1;
             endX = endX + 1;
             startY = startY - 1;
@@ -91,7 +89,6 @@ public class Matrix implements Serializable {
         if (rowLen != matrix.rowLen) return false;
         if (posX != matrix.posX) return false;
         return posY == matrix.posY;
-
     }
 
     @Override
